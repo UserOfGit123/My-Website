@@ -1,0 +1,159 @@
+/* Reset + Global */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  background: #fefefe;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  position: fixed;
+  height: 100vh;
+}
+.sidebar .logo {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.sidebar nav ul {
+  list-style: none;
+}
+.sidebar nav ul li {
+  margin: 1.2rem 0;
+}
+.sidebar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.sidebar nav ul li a:hover {
+  color: #38bdf8;
+}
+.sidebar footer {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Main */
+main {
+  margin-left: 220px;
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Hero */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-radius: 12px;
+  padding: 2rem;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.2s;
+}
+.hero h1 span {
+  color: #38bdf8;
+}
+
+/* Sections */
+section {
+  margin: 4rem 0;
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+.about { animation-delay: 0.4s; }
+.skills { animation-delay: 0.6s; }
+.contact { animation-delay: 0.8s; }
+
+/* About with Highlight Box */
+.about-box {
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Skills */
+.skills {
+  padding: 2rem 0;
+  text-align: center;
+}
+.skills .grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  margin-top: 2rem;
+}
+.skills .card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+}
+.skills .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Contact */
+.contact {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
